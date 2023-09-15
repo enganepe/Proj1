@@ -94,31 +94,31 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 27
+android.api = 31
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
 
 # (int) Android SDK version to use
-android.sdk = 24
+#android.sdk = 24
 
 # (str) Android NDK version to use
-android.ndk = 19b
+android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-android.ndk_api = 21
+#android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path =
+#android.ndk_path =
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
-android.sdk_path =
+#android.sdk_path =
 
 # (str) ANT directory (if empty, it will be automatically downloaded.)
-android.ant_path =
+#android.ant_path =
 
 # (bool) If True, then skip trying to update the Android sdk
 # This can be useful to avoid excess Internet downloads or save time
@@ -226,14 +226,14 @@ android.ant_path =
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = arm64-v8a, armeabi-v7a
+android.arch = arm64-v8a
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
 # android.numeric_version = 1
 
 # (bool) enables Android auto backup feature (Android API >=23)
-android.allow_backup = True
+#android.allow_backup = True
 
 # (str) XML file for custom backup rules (see official auto backup documentation)
 # android.backup_rules =
@@ -243,66 +243,6 @@ android.allow_backup = True
 # This property takes a map of key-value pairs. (via a string)
 # Usage example : android.manifest_placeholders = [myCustomUrl:\"org.kivy.customurl\"]
 # android.manifest_placeholders = [:]
-
-#
-# Python for android (p4a) specific
-#
-
-# (str) python-for-android fork to use, defaults to upstream (kivy)
-#p4a.fork = kivy
-
-# (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
-
-# (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
-#p4a.source_dir =
-
-# (str) The directory in which python-for-android should look for your own build recipes (if any)
-#p4a.local_recipes =
-
-# (str) Filename to the hook for p4a
-#p4a.hook =
-
-# (str) Bootstrap to use for android builds
-# p4a.bootstrap = sdl2
-
-# (int) port number to specify an explicit --port= p4a argument (eg for bootstrap flask)
-#p4a.port =
-
-# Control passing the --use-setup-py vs --ignore-setup-py to p4a
-# "in the future" --use-setup-py is going to be the default behaviour in p4a, right now it is not
-# Setting this to false will pass --ignore-setup-py, true will pass --use-setup-py
-# NOTE: this is general setuptools integration, having pyproject.toml is enough, no need to generate
-# setup.py if you're using Poetry, but you need to add "toml" to source.include_exts.
-#p4a.setup_py = false
-
-
-#
-# iOS specific
-#
-
-# (str) Path to a custom kivy-ios folder
-#ios.kivy_ios_dir = ../kivy-ios
-# Alternately, specify the URL and branch of a git checkout:
-ios.kivy_ios_url = https://github.com/kivy/kivy-ios
-ios.kivy_ios_branch = master
-
-# Another platform dependency: ios-deploy
-# Uncomment to use a custom checkout
-#ios.ios_deploy_dir = ../ios_deploy
-# Or specify URL and branch
-ios.ios_deploy_url = https://github.com/phonegap/ios-deploy
-ios.ios_deploy_branch = 1.10.0
-
-# (bool) Whether or not to sign the code
-ios.codesign.allowed = false
-
-# (str) Name of the certificate to use for signing the debug version
-# Get a list of available identities: buildozer ios list_identities
-#ios.codesign.debug = "iPhone Developer: <lastname> <firstname> (<hexstring>)"
-
-# (str) Name of the certificate to use for signing the release version
-#ios.codesign.release = %(ios.codesign.debug)s
 
 
 [buildozer]
